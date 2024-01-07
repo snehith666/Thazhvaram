@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div>
+    <table class="table">
+        <tr>
+            <td>Name</td>
+            <td>Subcategory</td>
+            <td>Price</td>
+            <td>Description</td>
+           
+           
+            <td>Image</td>
+        </tr>
+        {% for i in items %}
+        <tr>
+            <td>{{i.items_name}}</td>
+            <td>{{i.subcategory}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.description}}</td>
+            <td>
+                <img src="{{i.image.url}}" alt="" width="100%" height="200px">
+            </td>
+            <td>
+                
+            </td>
+           </tr>
+        {%endfor%}
+    
+    </table>
+   </div>
+{%endblock%}

@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%block body_block}
+<div class="container">
+
+    <table>
+
+        <tr>
+            <td>Name</td>
+            <td>Image</td>
+        </tr>
+
+        {%for cat in category%}
+           <tr>
+            <td>{{cat.categories}}</td>
+            <td>
+                <img src="{{cat.image.url}}" alt="" width="100%" height="200px">
+            </td>
+            <td>
+                <a href="{%url 'remove-subcategory' cat.id%}">Delete</a>
+                <a href="{%url 'subcategory-detail' cat.id%}">View</a>
+                
+            </td>
+           </tr>
+        {%endfor%}
+
+    </table>
+
+
+
+
+</div>
+{%endblock%}
